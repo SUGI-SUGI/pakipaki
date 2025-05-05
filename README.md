@@ -1,54 +1,47 @@
-# React + TypeScript + Vite
+# パキパキ - シンプルなカンバンボードアプリケーション
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 概要
+パキパキは、タスク管理のためのシンプルなカンバンボードアプリケーションです。ブラウザ上で動作し、タスクを「To Do」、「In Progress」、「Done」の3つのステータスで管理することができます。
 
-Currently, two official plugins are available:
+## 主な機能
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### タスク管理
+- タスクの追加：タイトル、説明、ステータスを設定して新しいタスクを作成
+- タスクの編集：既存のタスクの内容を変更
+- タスクの削除：不要になったタスクを削除
 
-## Expanding the ESLint configuration
+### サブタスク機能
+- サブタスクの追加：タスク内に小さな作業項目を追加
+- サブタスクの完了/未完了の切り替え：チェックボックスでサブタスクの状態を管理
+- サブタスクの削除：不要なサブタスクを削除
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### ドラッグ＆ドロップ
+- 各カラム間でタスクをドラッグ＆ドロップして移動可能
+- 視覚的なフィードバックでドラッグ中のタスクとドロップ先を表示
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### データの永続化
+- ブラウザのlocalStorageを使用してタスクデータを保存
+- ページをリロードしても以前の状態を維持
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 技術仕様
+- HTML5：アプリケーションの構造
+- CSS3：スタイリングとレイアウト
+- JavaScript (ES6)：機能とインタラクション
+- LocalStorage API：データの永続化
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## アプリケーション構造
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### ファイル構成
+- `index.html`: アプリケーションのHTMLマークアップ
+- `styles.css`: CSSスタイルシート
+- `script.js`: JavaScriptコード
+
+### クラス構造
+- `Task`クラス：タスクのデータ構造を定義
+- `KanbanApp`クラス：アプリケーションのメイン機能を管理
+
+## インストールと使用方法
+1. リポジトリをクローンまたはダウンロードします
+2. `index.html`ファイルをWebブラウザで開きます
+
+特別なセットアップや依存関係のインストールは必要ありません。モダンなWebブラウザで動作します。
